@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Monitoring Login</title>
+  <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+  <section id="loginPage" class="login-page">
+    <div class="login-shell">
+      <div class="login-brand">
+        <div class="brand-mark">HydroBytes</div>
+        <h1>Water<br>Monitoring</h1>
+        <p>Secure access to water flow, pressure, leaks, and area analytics.</p>
+        <div class="feature-grid" aria-hidden="true">
+          <div class="feature-pill">Flow Tracking</div>
+          <div class="feature-pill">Leak Alerts</div>
+          <div class="feature-pill">Area Insights</div>
+          <div class="feature-pill">Role Access</div>
+        </div>
+      </div>
+
+      <form id="loginForm" class="login-box" autocomplete="off">
+        <div class="login-card-top">
+          <h2>Welcome Back</h2>
+          <p>Login to continue to your dashboard.</p>
+        </div>
+        <label for="username">Username</label>
+        <input id="username" type="email" placeholder="Enter username" autocomplete="off" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Enter password" autocomplete="new-password" required>
+        <button type="submit">Login</button>
+        <span id="loginError"></span>
+      </form>
+    </div>
+  </section>
+
+  <section id="dashboard" class="dashboard hidden">
+    <header class="topbar">
+      <h1>HYDROBYTES</h1>
+      <div class="top-actions">
+        <button id="manageBtn" type="button">Manage</button>
+        <button id="logoutBtn" type="button">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="title-section">
+        <p>Water Monitoring Portal</p>
+        <h2>Water Monitoring Dashboard</h2>
+        <span>Admin overview for water flow, usage, pressure, leaks, areas, and pipelines.</span>
+      </section>
+
+      <section id="metrics" class="metrics"></section>
+
+      <section class="bottom-grid">
+        <div class="panel">
+          <h3>Open Alerts</h3>
+          <div id="alerts"></div>
+        </div>
+        <div class="panel">
+          <h3>Summary</h3>
+          <div id="areas"></div>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <script src="/frontend/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HydroBytes Manage</title>
+  <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>HYDROBYTES</h1>
+    <div class="top-actions">
+      <a class="button-link" href="/ui">Dashboard</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="title-section">
+      <p>Management</p>
+      <h2>Areas and Pipelines</h2>
+      <span>Add or remove areas and pipelines, and view data by area.</span>
+    </section>
+
+    <section class="manage-grid">
+      <div class="panel">
+        <h3>Add Area</h3>
+        <form id="addAreaForm" class="small-form">
+          <input id="addAreaName" type="text" placeholder="Area name" required>
+          <button type="submit">Add</button>
+        </form>
+
+        <h3>Add Pipeline</h3>
+        <form id="addPipelineForm" class="small-form">
+          <select id="pipelineAreaName" required></select>
+          <input id="addPipelineName" type="text" placeholder="Pipeline name" required>
+          <button type="submit">Add</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h3>Remove Area</h3>
+        <form id="removeAreaForm" class="small-form">
+          <select id="removeAreaName" required></select>
+          <button type="submit">Remove</button>
+        </form>
+
+        <h3>Remove Pipeline</h3>
+        <form id="removePipelineForm" class="small-form">
+          <select id="removePipelineName" required></select>
+          <button type="submit">Remove</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="bottom-grid">
+      <div class="panel">
+        <div class="area-row">
+          <h3>Current Area</h3>
+          <select id="areaDataSelect"></select>
+        </div>
+        <div id="areaList" class="scroll-list data-list"></div>
+      </div>
+      <div class="panel data-panel">
+        <div class="area-row">
+          <h3>Area Wise Data</h3>
+          <select id="alertAreaSelect"></select>
+        </div>
+        <div id="areaData" class="scroll-list data-list"></div>
+      </div>
+    </section>
+
+    <section class="analysis-grid manage-analysis">
+      <div class="panel">
+        <div class="section-head">
+          <h3>Area Water Balance</h3>
+          <p>Shows which areas use more water and where losses are higher.</p>
+        </div>
+        <div id="areaBalanceChart" class="chart-box"></div>
+      </div>
+      <div class="panel">
+        <div class="section-head">
+          <h3>Leak Priority</h3>
+          <p>Highlights the areas with more open alerts so action is easier.</p>
+        </div>
+        <div id="leakPriorityChart" class="chart-box"></div>
+      </div>
+    </section>
+
+    <p id="manageMessage" class="message"></p>
+  </main>
+
+  <script src="/frontend/manage.js"></script>
+</body>
+</html>
